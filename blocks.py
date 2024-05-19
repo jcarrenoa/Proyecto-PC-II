@@ -111,7 +111,32 @@ class compare(bloque):
         self.o_igual = False
         self.o_desigual = False
                   
-      
+class greater_equal(bloque):   
+    def execute(self):
+        while self.i_flow == False:
+            pass
+        if self.i_A_value >= self.i_B_value :
+            self.o_mayor_igual = True
+
+    def __init__(self):
+        
+        self.i_A_value = None
+        self.i_B_value = None
+        self.o_mayor_igual = False
+
+class less_equal(bloque):   
+    def execute(self):
+        while self.i_flow == False:
+            pass
+        if self.i_A_value <= self.i_B_value :
+            self.o_menor_igual = True
+
+    def __init__(self):
+        
+        self.i_A_value = None
+        self.i_B_value = None
+        self.o_menor_igual = False
+
 class for_iter(bloque):   
     def execute(self):
         while self.i_flow == False:

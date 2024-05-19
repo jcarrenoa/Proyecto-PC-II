@@ -1,11 +1,9 @@
-from App import MainWindow
+from App import WindowsMain
 import sys
-from PyQt6.QtWidgets import QApplication, QMainWindow, QLabel, QPushButton, QWidget
+from PyQt6.QtWidgets import QApplication
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    mainWin = MainWindow()
-    mainWin.show()
+    window = WindowsMain.MainWindow()
+    window.show()
     sys.exit(app.exec())
-
-

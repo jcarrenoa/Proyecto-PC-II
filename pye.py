@@ -1,44 +1,47 @@
-#EJEMPLOS 
-
-import sys
-from PyQt6.QtWidgets import QApplication, QPushButton, QLabel, QWidget
-from PyQt6.QtGui import QPainter, QColor, QBrush, QPen
+from PyQt6.QtWidgets import QWidget, QLabel, QPushButton, QHBoxLayout, QVBoxLayout, QMainWindow, QApplication
 from PyQt6.QtCore import Qt
 
-class RectangleWithButtons:
-    def __init__(self, parent):
-        self.parent = parent
+class CustomBlock(QWidget):
+    def __init__(self, parent=None):
+        super().__init__(parent)
 
-        # Crear dos botones simulados
-        self.button1 = QPushButton('Botón 1', parent)
-        self.button1.setGeometry(10, 10, 80, 30)
+        self.setFixedSize(200, 100)
 
-        self.button2 = QPushButton('Botón 2', parent)
-        self.button2.setGeometry(10, 50, 80, 30)
+        # Crear los widgets
+        self.label = QLabel("Etiqueta")
+        self.button1 = QPushButton("Botón 1")
+        self.button2 = QPushButton("Botón 2")
 
-        # Crear una etiqueta
-        self.label = QLabel('Etiqueta', parent)
-        self.label.setGeometry(200, 10, 150, 30)
+        # Crear los layouts
+        button_layout = QVBoxLayout()
+        button_layout.addWidget(self.button1)
+        button_layout.addWidget(self.button2)
 
-    def paintEvent(self, event):
-        painter = QPainter(self.parent)
-        painter.setRenderHint(QPainter.RenderHint.Antialiasing) # Para mejorar la calidad del dibujo
+        main_layout = QHBoxLayout()
+        main_layout.addLayout(button_layout)
+        main_layout.addStretch()
+        main_layout.addWidget(self.label, alignment=Qt.AlignmentFlag.AlignTop | Qt.AlignmentFlag.AlignRight)
 
-        # Dibujar el rectángulo
-        rect = self.parent.rect()
-        painter.setPen(QPen(Qt.GlobalColor.black, 2, Qt.PenStyle.SolidLine))
-        painter.setBrush(QBrush(Qt.GlobalColor.blue, Qt.BrushStyle.SolidPattern))
-        painter.drawRect(0, 0, 100, 100)
+        self.setStyleSheet("QWidget{background-color:Grey;}")
 
-if __name__ == '__main__':
-    app = QApplication(sys.argv)
-    window = QWidget()
-    window.setWindowTitle('Rectángulo con botones y etiqueta')
-    window.setGeometry(100, 100, 400, 400)
+        self.setLayout(main_layout)
 
-    rectangle = RectangleWithButtons(window)
-    # Llamar a la función paintEvent para dibujar el rectángulo
-    rectangle.paintEvent(None)
+class MainWindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
 
+        # Crear instancias de CustomBlock
+        block1 = CustomBlock(self)
+
+        # Crear el layout principal
+        block1.move(200, 400)
+
+        # Crear un widget central y establecer el layout principal
+
+        self.setFixedSize(500, 1000)
+
+if __name__ == "__main__":
+    app = QApplication([])
+    window = MainWindow()
     window.show()
-    sys.exit(app.exec())
+    app.exec()
