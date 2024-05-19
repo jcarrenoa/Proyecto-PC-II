@@ -29,12 +29,31 @@
 }
 
 QPushButton {
-	border: none;
-	color:white;
+  min-width: 70px;
+  height: 40px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 10px;
+  border: 2px solid #adb5bd;
+  background: #adb5bd;
+}
+QPushButton:hover {
+  background: #fff;
+  color: #adb5bd
+}
+
+QLineEdit {
+
 }
 </string>
     </property>
-    <widget class="QPushButton" name="pushButton">
+    <widget class="QPushButton" name="add_script">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -47,7 +66,7 @@ QPushButton {
       <string>Add</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label">
+    <widget class="QLabel" name="label_script">
      <property name="geometry">
       <rect>
        <x>30</x>
@@ -73,7 +92,7 @@ QPushButton {
       <set>Qt::AlignCenter</set>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit">
+    <widget class="QLineEdit" name="text_script_add">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -103,7 +122,7 @@ QTextEdit {
 	border-color: rgb(118, 171, 174);
 }</string>
     </property>
-    <widget class="QWidget" name="widget_2" native="true">
+    <widget class="QWidget" name="widget_cmd" native="true">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -112,7 +131,7 @@ QTextEdit {
        <height>221</height>
       </rect>
      </property>
-     <widget class="QTextEdit" name="textEdit">
+     <widget class="QTextEdit" name="cmd">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -126,45 +145,24 @@ QTextEdit {
       </property>
      </widget>
     </widget>
-    <widget class="QScrollArea" name="scrollArea">
+    <widget class="QWidget" name="widget_view" native="true">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>10</y>
-       <width>791</width>
-       <height>421</height>
+       <x>19</x>
+       <y>19</y>
+       <width>771</width>
+       <height>401</height>
       </rect>
      </property>
-     <property name="widgetResizable">
-      <bool>true</bool>
-     </property>
-     <widget class="QWidget" name="scrollAreaWidgetContents">
+     <widget class="QGraphicsView" name="graphicsView">
       <property name="geometry">
        <rect>
-        <x>-446</x>
-        <y>-816</y>
-        <width>1218</width>
-        <height>1218</height>
+        <x>5</x>
+        <y>1</y>
+        <width>761</width>
+        <height>391</height>
        </rect>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout">
-       <item>
-        <widget class="QFrame" name="frame">
-         <property name="minimumSize">
-          <size>
-           <width>1200</width>
-           <height>1200</height>
-          </size>
-         </property>
-         <property name="frameShape">
-          <enum>QFrame::StyledPanel</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Raised</enum>
-         </property>
-        </widget>
-       </item>
-      </layout>
      </widget>
     </widget>
    </widget>
@@ -183,12 +181,27 @@ QTextEdit {
 }
 
 QPushButton {
-	border: none;
-	color:white;
+  min-width: 70px;
+  height: 40px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 10px;
+  border: 2px solid #adb5bd;
+  background: #adb5bd;
+}
+QPushButton:hover {
+  background: #fff;
+  color: #adb5bd
 }
 </string>
     </property>
-    <widget class="QPushButton" name="pushButton_2">
+    <widget class="QPushButton" name="add_variable">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -201,7 +214,7 @@ QPushButton {
       <string>Add</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_2">
+    <widget class="QLabel" name="label_variable">
      <property name="geometry">
       <rect>
        <x>40</x>
@@ -224,7 +237,7 @@ QPushButton {
       <set>Qt::AlignCenter</set>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_2">
+    <widget class="QLineEdit" name="text_variable_add">
      <property name="geometry">
       <rect>
        <x>10</x>

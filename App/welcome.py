@@ -1,6 +1,6 @@
 import sys
-from PyQt6.QtWidgets import QApplication, QMainWindow, QLabel, QPushButton, QWidget, QCheckBox, QLineEdit, QMessageBox
-from PyQt6.QtGui import QFont, QPixmap
+from PyQt6.QtWidgets import QLabel, QWidget
+from PyQt6.QtGui import QFont
 
 class WelcomeMessage(QWidget):
 
