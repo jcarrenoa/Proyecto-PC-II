@@ -1,6 +1,6 @@
 import App.Blocks.blocksDesing as blocksDesing
 from PyQt6.QtWidgets import QGraphicsRectItem, QGraphicsTextItem, QGraphicsEllipseItem
-from PyQt6.QtGui import QBrush, QColor, QPen
+from PyQt6.QtGui import QBrush, QColor, QPen, QPainterPath
 from PyQt6.QtCore import Qt, QRectF
 
 class BlockItem(QGraphicsRectItem):
@@ -81,11 +81,25 @@ class BlockItem(QGraphicsRectItem):
         #self.scene.addItem(text)
     
     def paint(self, painter, option, widget):
-        # Draw the main rectangle
-        super().paint(painter, option, widget)
-        # Draw the header
-        painter.setBrush(self.header_brush)
-        painter.drawRect(self.header_rect)
+        
+        # Draw the main rounded rectangle
+        path = QPainterPath()
+        path.addRoundedRect(self.rect(), 10, 10)
+        painter.fillPath(path, QBrush(QColor("#333333")))
+        painter.drawPath(path)
+
+        header_path = QPainterPath()
+        #header_path.addRoundedRect(self.header_rect, 10, 10)
+        header_path.moveTo(self.header_rect.topLeft())
+        header_path.lineTo(self.header_rect.topRight())
+        header_path.lineTo(self.header_rect.bottomRight().x() , self.header_rect.bottomRight().y())
+        header_path.lineTo(self.header_rect.bottomLeft().x() , self.header_rect.bottomLeft().y())
+        
+        header_path.closeSubpath()
+
+        painter.fillPath(header_path, self.header_brush)
+        painter.drawPath(header_path)
+        
 
     # Override mouse press event
     def mousePressEvent(self, event):
