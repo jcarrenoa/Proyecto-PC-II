@@ -6,26 +6,35 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1112</width>
-    <height>688</height>
+    <width>1280</width>
+    <height>720</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">Background-color: rgb(43, 48, 77);</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QWidget" name="icon_only_widget" native="true">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>151</width>
-      <height>661</height>
+      <x>20</x>
+      <y>10</y>
+      <width>171</width>
+      <height>671</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Futura Medium</family>
+     </font>
     </property>
     <property name="styleSheet">
      <string notr="true">QWidget {
-	background-color: rgb(118, 171, 174);
+	background-color: rgb(63, 67, 103);
+	border-radius: 25;
 }
 
 QPushButton {
@@ -40,8 +49,8 @@ QPushButton {
   display: inline-block;
   outline: none;
   border-radius: 10px;
-  border: 2px solid #adb5bd;
-  background: #adb5bd;
+  border: 2px solid #55C590;
+  background: #55C590;
 }
 QPushButton:hover {
   background: #fff;
@@ -56,11 +65,17 @@ QLineEdit {
     <widget class="QPushButton" name="add_script">
      <property name="geometry">
       <rect>
-       <x>20</x>
+       <x>30</x>
        <y>630</y>
        <width>111</width>
        <height>24</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Futura Medium</family>
+       <bold>true</bold>
+      </font>
      </property>
      <property name="text">
       <string>Add</string>
@@ -69,17 +84,17 @@ QLineEdit {
     <widget class="QLabel" name="label_script">
      <property name="geometry">
       <rect>
-       <x>30</x>
+       <x>10</x>
        <y>10</y>
-       <width>91</width>
-       <height>16</height>
+       <width>151</width>
+       <height>31</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <family>Tw Cen MT</family>
-       <pointsize>14</pointsize>
-       <bold>true</bold>
+       <family>Futura Medium</family>
+       <pointsize>18</pointsize>
+       <bold>false</bold>
       </font>
      </property>
      <property name="layoutDirection">
@@ -95,26 +110,40 @@ QLineEdit {
     <widget class="QLineEdit" name="text_script_add">
      <property name="geometry">
       <rect>
-       <x>10</x>
+       <x>20</x>
        <y>600</y>
        <width>131</width>
        <height>22</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <family>Futura</family>
+      </font>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 2px solid #636B97;
+background-color: #636B97;	
+border-radius: 10;</string>
+     </property>
     </widget>
    </widget>
-   <widget class="QWidget" name="widget" native="true">
+   <widget class="QWidget" name="WorkspaceWidget" native="true">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>0</y>
-      <width>811</width>
-      <height>661</height>
+      <x>210</x>
+      <y>10</y>
+      <width>881</width>
+      <height>401</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">QWidget {
-	background-color: rgb(49, 54, 63);
+	background-color: rgb(21, 29, 47);
+	border-radius: 25;
 }
 
 QTextEdit {
@@ -122,62 +151,30 @@ QTextEdit {
 	border-color: rgb(118, 171, 174);
 }</string>
     </property>
-    <widget class="QWidget" name="widget_cmd" native="true">
+    <widget class="QGraphicsView" name="graphicsView">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>430</y>
-       <width>791</width>
-       <height>221</height>
-      </rect>
-     </property>
-     <widget class="QTextEdit" name="cmd">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>10</y>
-        <width>771</width>
-        <height>201</height>
-       </rect>
-      </property>
-      <property name="readOnly">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="widget_view" native="true">
-     <property name="geometry">
-      <rect>
-       <x>19</x>
-       <y>19</y>
-       <width>771</width>
+       <x>0</x>
+       <y>0</y>
+       <width>881</width>
        <height>401</height>
       </rect>
      </property>
-     <widget class="QGraphicsView" name="graphicsView">
-      <property name="geometry">
-       <rect>
-        <x>5</x>
-        <y>1</y>
-        <width>761</width>
-        <height>391</height>
-       </rect>
-      </property>
-     </widget>
     </widget>
    </widget>
    <widget class="QWidget" name="icon_only_widget_2" native="true">
     <property name="geometry">
      <rect>
-      <x>960</x>
-      <y>0</y>
+      <x>1110</x>
+      <y>10</y>
       <width>151</width>
-      <height>661</height>
+      <height>671</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">QWidget {
-	background-color: rgb(118, 171, 174);
+	background-color: rgb(63, 67, 103);
+	border-radius: 25;
 }
 
 QPushButton {
@@ -192,8 +189,8 @@ QPushButton {
   display: inline-block;
   outline: none;
   border-radius: 10px;
-  border: 2px solid #adb5bd;
-  background: #adb5bd;
+  border: 2px solid #55C590;
+  background: #55C590;
 }
 QPushButton:hover {
   background: #fff;
@@ -210,6 +207,12 @@ QPushButton:hover {
        <height>24</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <family>Futura Medium</family>
+       <bold>true</bold>
+      </font>
+     </property>
      <property name="text">
       <string>Add</string>
      </property>
@@ -217,17 +220,17 @@ QPushButton:hover {
     <widget class="QLabel" name="label_variable">
      <property name="geometry">
       <rect>
-       <x>40</x>
+       <x>10</x>
        <y>10</y>
-       <width>81</width>
-       <height>20</height>
+       <width>131</width>
+       <height>31</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <family>Tw Cen MT</family>
-       <pointsize>14</pointsize>
-       <bold>true</bold>
+       <family>Futura Medium</family>
+       <pointsize>18</pointsize>
+       <bold>false</bold>
       </font>
      </property>
      <property name="text">
@@ -246,6 +249,51 @@ QPushButton:hover {
        <height>22</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <family>Futura</family>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 2px solid #636B97;
+background-color: #636B97;	
+border-radius: 10
+;</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="LogWidget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>430</y>
+      <width>881</width>
+      <height>251</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QWidget {
+	background-color: rgb(99, 107, 151);
+	border-radius: 25;
+}
+
+QTextEdit {
+	
+	border-color: rgb(118, 171, 174);
+}</string>
+    </property>
+    <widget class="QTextEdit" name="textEdit">
+     <property name="geometry">
+      <rect>
+       <x>23</x>
+       <y>20</y>
+       <width>831</width>
+       <height>211</height>
+      </rect>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
     </widget>
    </widget>
   </widget>
@@ -254,7 +302,7 @@ QPushButton:hover {
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1112</width>
+     <width>1280</width>
      <height>22</height>
     </rect>
    </property>

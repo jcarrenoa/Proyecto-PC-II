@@ -197,24 +197,284 @@ def drawPointsConnections(self, block_type, x, y,width):
         self.add_connection_point('', "")
         self.add_connection_point('A', "A")
         self.add_connection_point('B', "B")
+        self.add_connection_point(' ', " ")
         self.add_connection_point('result', "result", True)
         
         self.val_a = QLineEdit()
-        self.val_a.setPlaceholderText("print")
-        self.val_a.setMinimumSize(20, 10)  
-        self.val_a.setMaximumSize(20, 10)
+        self.val_a.setPlaceholderText("A")
+        self.val_a.setMinimumSize(30, 15)  
+        self.val_a.setMaximumSize(30, 15)
         proxy_name = QGraphicsProxyWidget(self)
         proxy_name.setWidget(self.val_a)
-        proxy_name.setPos(x + 35, y + self.header_height + 20)
+        proxy_name.setPos(x + 40, y + self.header_height + 20)
 
         self.suma_simbol = QGraphicsTextItem("+", self)
         self.suma_simbol.setDefaultTextColor(Qt.GlobalColor.white)
-        self.suma_simbol.setPos(x + 40, y+20 )
+        self.suma_simbol.setPos(x + 73, y+35 )
 
         self.val_b = QLineEdit()
-        self.val_b.setPlaceholderText("print")
-        self.val_b.setMinimumSize(20, 10)  
-        self.val_b.setMaximumSize(20, 10)
+        self.val_b.setPlaceholderText("B")
+        self.val_b.setMinimumSize(30, 15)  
+        self.val_b.setMaximumSize(30, 15)
         proxy_name = QGraphicsProxyWidget(self)
         proxy_name.setWidget(self.val_b)
-        proxy_name.setPos(x + 45, y + self.header_height + 25)
+        proxy_name.setPos(x + 90, y + self.header_height + 20)
+
+    if block_type== 'sub' :
+        # Points of connection
+        self.connection_points = {
+            '': QPointF(x + 10, y + self.header_height + 10),
+            'A': QPointF(x + 10, y + self.header_height + 30),
+            'B': QPointF(x + 10, y + self.header_height + 50),
+            ' ': QPointF(x + width - 10, y + self.header_height + 5),
+            'result': QPointF(x + width - 10, y + self.header_height + 25)
+        }
+
+        # Draw connection points and labels
+        self.add_connection_point('', "")
+        self.add_connection_point('A', "A")
+        self.add_connection_point('B', "B")
+        self.add_connection_point(' ', " ")
+        self.add_connection_point('result', "result", True)
+        
+        self.val_a = QLineEdit()
+        self.val_a.setPlaceholderText("A")
+        self.val_a.setMinimumSize(30, 15)  
+        self.val_a.setMaximumSize(30, 15)
+        proxy_name = QGraphicsProxyWidget(self)
+        proxy_name.setWidget(self.val_a)
+        proxy_name.setPos(x + 40, y + self.header_height + 20)
+
+        self.sub_simbol = QGraphicsTextItem("-", self)
+        self.sub_simbol.setDefaultTextColor(Qt.GlobalColor.white)
+        self.sub_simbol.setPos(x + 73, y+35 )
+
+        self.val_b = QLineEdit()
+        self.val_b.setPlaceholderText("B")
+        self.val_b.setMinimumSize(30, 15)  
+        self.val_b.setMaximumSize(30, 15)
+        proxy_name = QGraphicsProxyWidget(self)
+        proxy_name.setWidget(self.val_b)
+        proxy_name.setPos(x + 90, y + self.header_height + 20)
+
+    if block_type== 'mult' :
+        # Points of connection
+        self.connection_points = {
+            '': QPointF(x + 10, y + self.header_height + 10),
+            'A': QPointF(x + 10, y + self.header_height + 30),
+            'B': QPointF(x + 10, y + self.header_height + 50),
+            ' ': QPointF(x + width - 10, y + self.header_height + 5),
+            'result': QPointF(x + width - 10, y + self.header_height + 25)
+        }
+
+        # Draw connection points and labels
+        self.add_connection_point('', "")
+        self.add_connection_point('A', "A")
+        self.add_connection_point('B', "B")
+        self.add_connection_point(' ', " ")
+        self.add_connection_point('result', "result", True)
+        
+        self.val_a = QLineEdit()
+        self.val_a.setPlaceholderText("A")
+        self.val_a.setMinimumSize(30, 15)  
+        self.val_a.setMaximumSize(30, 15)
+        proxy_name = QGraphicsProxyWidget(self)
+        proxy_name.setWidget(self.val_a)
+        proxy_name.setPos(x + 40, y + self.header_height + 20)
+
+        self.simbol = QGraphicsTextItem("*", self)
+        self.simbol.setDefaultTextColor(Qt.GlobalColor.white)
+        self.simbol.setPos(x + 73, y+35 )
+
+        self.val_b = QLineEdit()
+        self.val_b.setPlaceholderText("B")
+        self.val_b.setMinimumSize(30, 15)  
+        self.val_b.setMaximumSize(30, 15)
+        proxy_name = QGraphicsProxyWidget(self)
+        proxy_name.setWidget(self.val_b)
+        proxy_name.setPos(x + 90, y + self.header_height + 20)
+
+    if block_type== 'div' :
+        # Points of connection
+        self.connection_points = {
+            '': QPointF(x + 10, y + self.header_height + 10),
+            'A': QPointF(x + 10, y + self.header_height + 30),
+            'B': QPointF(x + 10, y + self.header_height + 50),
+            ' ': QPointF(x + width - 10, y + self.header_height + 5),
+            'result': QPointF(x + width - 10, y + self.header_height + 25)
+        }
+
+        # Draw connection points and labels
+        self.add_connection_point('', "")
+        self.add_connection_point('A', "A")
+        self.add_connection_point('B', "B")
+        self.add_connection_point(' ', " ")
+        self.add_connection_point('result', "result", True)
+        
+        self.val_a = QLineEdit()
+        self.val_a.setPlaceholderText("A")
+        self.val_a.setMinimumSize(30, 15)  
+        self.val_a.setMaximumSize(30, 15)
+        proxy_name = QGraphicsProxyWidget(self)
+        proxy_name.setWidget(self.val_a)
+        proxy_name.setPos(x + 40, y + self.header_height + 20)
+
+        self.simbol = QGraphicsTextItem("/", self)
+        self.simbol.setDefaultTextColor(Qt.GlobalColor.white)
+        self.simbol.setPos(x + 73, y+35 )
+
+        self.val_b = QLineEdit()
+        self.val_b.setPlaceholderText("B")
+        self.val_b.setMinimumSize(30, 15)  
+        self.val_b.setMaximumSize(30, 15)
+        proxy_name = QGraphicsProxyWidget(self)
+        proxy_name.setWidget(self.val_b)
+        proxy_name.setPos(x + 90, y + self.header_height + 20)
+
+    if block_type== 'div_int' :
+        # Points of connection
+        self.connection_points = {
+            '': QPointF(x + 10, y + self.header_height + 10),
+            'A': QPointF(x + 10, y + self.header_height + 30),
+            'B': QPointF(x + 10, y + self.header_height + 50),
+            ' ': QPointF(x + width - 10, y + self.header_height + 5),
+            'result': QPointF(x + width - 10, y + self.header_height + 25)
+        }
+
+        # Draw connection points and labels
+        self.add_connection_point('', "")
+        self.add_connection_point('A', "A")
+        self.add_connection_point('B', "B")
+        self.add_connection_point(' ', " ")
+        self.add_connection_point('result', "result", True)
+        
+        self.val_a = QLineEdit()
+        self.val_a.setPlaceholderText("A")
+        self.val_a.setMinimumSize(30, 15)  
+        self.val_a.setMaximumSize(30, 15)
+        proxy_name = QGraphicsProxyWidget(self)
+        proxy_name.setWidget(self.val_a)
+        proxy_name.setPos(x + 40, y + self.header_height + 20)
+
+        self.simbol = QGraphicsTextItem("//", self)
+        self.simbol.setDefaultTextColor(Qt.GlobalColor.white)
+        self.simbol.setPos(x + 73, y+35 )
+
+        self.val_b = QLineEdit()
+        self.val_b.setPlaceholderText("B")
+        self.val_b.setMinimumSize(30, 15)  
+        self.val_b.setMaximumSize(30, 15)
+        proxy_name = QGraphicsProxyWidget(self)
+        proxy_name.setWidget(self.val_b)
+        proxy_name.setPos(x + 90, y + self.header_height + 20)
+
+    if block_type== 'mod' :
+        # Points of connection
+        self.connection_points = {
+            '': QPointF(x + 10, y + self.header_height + 10),
+            'A': QPointF(x + 10, y + self.header_height + 30),
+            'B': QPointF(x + 10, y + self.header_height + 50),
+            ' ': QPointF(x + width - 10, y + self.header_height + 5),
+            'result': QPointF(x + width - 10, y + self.header_height + 25)
+        }
+
+        # Draw connection points and labels
+        self.add_connection_point('', "")
+        self.add_connection_point('A', "A")
+        self.add_connection_point('B', "B")
+        self.add_connection_point(' ', " ")
+        self.add_connection_point('result', "result", True)
+        
+        self.val_a = QLineEdit()
+        self.val_a.setPlaceholderText("A")
+        self.val_a.setMinimumSize(30, 15)  
+        self.val_a.setMaximumSize(30, 15)
+        proxy_name = QGraphicsProxyWidget(self)
+        proxy_name.setWidget(self.val_a)
+        proxy_name.setPos(x + 40, y + self.header_height + 20)
+
+        self.simbol = QGraphicsTextItem("%", self)
+        self.simbol.setDefaultTextColor(Qt.GlobalColor.white)
+        self.simbol.setPos(x + 73, y+35 )
+
+        self.val_b = QLineEdit()
+        self.val_b.setPlaceholderText("B")
+        self.val_b.setMinimumSize(30, 15)  
+        self.val_b.setMaximumSize(30, 15)
+        proxy_name = QGraphicsProxyWidget(self)
+        proxy_name.setWidget(self.val_b)
+        proxy_name.setPos(x + 90, y + self.header_height + 20)
+
+    if block_type== 'greater_equal' :
+        # Points of connection
+        self.connection_points = {
+            '': QPointF(x + 10, y + self.header_height + 10),
+            'A': QPointF(x + 10, y + self.header_height + 30),
+            'B': QPointF(x + 10, y + self.header_height + 50),
+            ' ': QPointF(x + width - 10, y + self.header_height + 5),
+            'result': QPointF(x + width - 10, y + self.header_height + 25)
+        }
+
+        # Draw connection points and labels
+        self.add_connection_point('', "")
+        self.add_connection_point('A', "A")
+        self.add_connection_point('B', "B")
+        self.add_connection_point(' ', " ")
+        self.add_connection_point('result', "result", True)
+        
+        self.val_a = QLineEdit()
+        self.val_a.setPlaceholderText("A")
+        self.val_a.setMinimumSize(30, 15)  
+        self.val_a.setMaximumSize(30, 15)
+        proxy_name = QGraphicsProxyWidget(self)
+        proxy_name.setWidget(self.val_a)
+        proxy_name.setPos(x + 40, y + self.header_height + 20)
+
+        self.simbol = QGraphicsTextItem(">=", self)
+        self.simbol.setDefaultTextColor(Qt.GlobalColor.white)
+        self.simbol.setPos(x + 65, y+35 )
+
+        self.val_b = QLineEdit()
+        self.val_b.setPlaceholderText("B")
+        self.val_b.setMinimumSize(30, 15)  
+        self.val_b.setMaximumSize(30, 15)
+        proxy_name = QGraphicsProxyWidget(self)
+        proxy_name.setWidget(self.val_b)
+        proxy_name.setPos(x + 90, y + self.header_height + 20)
+
+    if block_type== 'less_equal' :
+        # Points of connection
+        self.connection_points = {
+            '': QPointF(x + 10, y + self.header_height + 10),
+            'A': QPointF(x + 10, y + self.header_height + 30),
+            'B': QPointF(x + 10, y + self.header_height + 50),
+            ' ': QPointF(x + width - 10, y + self.header_height + 5),
+            'result': QPointF(x + width - 10, y + self.header_height + 25)
+        }
+
+        # Draw connection points and labels
+        self.add_connection_point('', "")
+        self.add_connection_point('A', "A")
+        self.add_connection_point('B', "B")
+        self.add_connection_point(' ', " ")
+        self.add_connection_point('result', "result", True)
+        
+        self.val_a = QLineEdit()
+        self.val_a.setPlaceholderText("A")
+        self.val_a.setMinimumSize(30, 15)  
+        self.val_a.setMaximumSize(30, 15)
+        proxy_name = QGraphicsProxyWidget(self)
+        proxy_name.setWidget(self.val_a)
+        proxy_name.setPos(x + 40, y + self.header_height + 20)
+
+        self.simbol = QGraphicsTextItem("<=", self)
+        self.simbol.setDefaultTextColor(Qt.GlobalColor.white)
+        self.simbol.setPos(x + 65, y+35 )
+
+        self.val_b = QLineEdit()
+        self.val_b.setPlaceholderText("B")
+        self.val_b.setMinimumSize(30, 15)  
+        self.val_b.setMaximumSize(30, 15)
+        proxy_name = QGraphicsProxyWidget(self)
+        proxy_name.setWidget(self.val_b)
+        proxy_name.setPos(x + 90, y + self.header_height + 20)
